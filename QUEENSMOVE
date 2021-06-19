@@ -85,13 +85,13 @@ def queensAttack(n, k, r_q, c_q, obstacles):
 if __name__ == '__main__':
 
 
-    first_multiple_input = raw_input().rstrip().split()
+    first_multiple_input = input().rstrip().split()
 
     n = int(first_multiple_input[0])
 
     k = int(first_multiple_input[1])
 
-    second_multiple_input = raw_input().rstrip().split()
+    second_multiple_input = input().rstrip().split()
 
     r_q = int(second_multiple_input[0])
 
@@ -99,8 +99,8 @@ if __name__ == '__main__':
 
     obstacles = []
 
-    for _ in xrange(k):
-        obstacles.append(map(int, raw_input().rstrip().split()))
+    for _ in range(k):
+        obstacles.append(map(int, input().rstrip().split()))
 
     result = queensAttack(n, k, r_q, c_q, obstacles)
 
