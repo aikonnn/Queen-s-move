@@ -100,7 +100,7 @@ if __name__ == '__main__':
     obstacles = []
 
     for _ in range(k):
-        obstacles.append(map(int, input().rstrip().split()))
+        obstacles.append(list(map(int, input().rstrip().split())))
 
     result = queensAttack(n, k, r_q, c_q, obstacles)
 
