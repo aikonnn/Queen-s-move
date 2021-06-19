@@ -83,7 +83,7 @@ def queensAttack(n, k, r_q, c_q, obstacles):
     # Write your code here
 
 if __name__ == '__main__':
-    fptr = open(os.environ['OUTPUT_PATH'], 'w')
+
 
     first_multiple_input = raw_input().rstrip().split()
 
@@ -104,6 +104,4 @@ if __name__ == '__main__':
 
     result = queensAttack(n, k, r_q, c_q, obstacles)
 
-    fptr.write(str(result) + '\n')
-
-    fptr.close()
+    print(result)
