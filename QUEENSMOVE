@@ -7,11 +7,11 @@ import re
 import sys
 
 
-
+##BOARDDISPLAYUSINGARRAY
 def display_board(board):
     for i in board[::-1]:
         print(i)
-
+#CHECK MOVE IN X AND Y AXIS
 def xandycheck(board, r_q, c_q):
 
     count = 0
@@ -44,29 +44,38 @@ def xandycheck(board, r_q, c_q):
         count += 1
 
     return count
-
-
+#CHECK MOVE IN DIAGONAL AXIS
 def diagcheck(board, r_q , c_q):
     count = 0
-
-    if (len(board) - c_q) > (len(board) - r_q):
+    ##SOUTHWEST DIAG
+    if (c_q) >= (len(board) - r_q):
         for i in range(1, c_q):
             if board[r_q-1-i][c_q-1-i] != ' ':
                 break
             board[r_q-1-i][c_q-1-i] = 'i'
             count += 1
-    elif (len(board) - c_q) == (len(board) - r_q):
-        for i in range(1, c_q):
-            if board[r_q-1-i][c_q-1-i] != ' ':
-                break
-            board[r_q-1-i][c_q-1-i] = 'i'
-            count += 1
-    elif (len(board) - c_q) < (len(board) - r_q):
+    elif (c_q) < (len(board) - r_q):
         for i in range(1, r_q):
             if board[r_q-1-i][c_q-1-i] != ' ':
                 break
             board[r_q-1-i][c_q-1-i] = 'i'
             count += 1
+
+    ##NORTHWEST DIAG
+    if c_q >= r_q:
+        for i in range(1, r_q-1):
+            if board[r_q-1+i][c_q-1-i] != ' ':
+                break
+            board[r_q-1+i][c_q-1-i] = 'i'
+            count += 1
+    elif c_q < r_q:
+        for i in range(1, c_q-1):
+            if board[r_q-1+i][c_q-1-i] != ' ':
+                break
+            board[r_q-1+i][c_q-1-i] = 'i'
+            count += 1
+
+
 
 def queensAttack(n, k, r_q, c_q, obstacles):
     row = []
